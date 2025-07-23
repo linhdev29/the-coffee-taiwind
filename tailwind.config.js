@@ -17,6 +17,9 @@ export default {
       },
       animation: {
         sliderDown: "sliderDown 0.4s ease-in-out"
+      },
+      backgroundImage: {
+        'slider-bg': "url('./images/slider-coffee.jpg')"
       }
     }
   },
