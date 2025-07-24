@@ -31,7 +31,7 @@ export default {
       backgroundImage: {
         "slider-bg": "url('./images/slider-coffee.jpg')",
         ...Object.fromEntries(
-          Array.from({ length: 5 }, (_, i) => [
+          Array.from({ length: 9 }, (_, i) => [
             `product-bg-${i + 1}`,
             `url('./images/feat-mug-${i + 1}.jpg')`
           ])
