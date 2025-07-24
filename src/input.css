@@ -32,3 +32,6 @@
 .mct-sub-headline-label {
   @apply uppercase mx-4 tracking-widest text-gray-500 font-medium text-xs text-center
 }
+.mct-button {
+ @apply text-center uppercase tracking-wider px-6 py-4 cursor-pointer hover:bg-opacity-90
+}
