@@ -8,10 +8,41 @@
   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-  <div class="root">
+  <div class="root bg-gray-50">
     <div class="content-wrapper max-w-screen-2xl text-base mx-auto px-8 font-Karla">
       <header class="header p-6 mx-auto">
         <nav class="nav flex flex-row justify-between items-center relative">
+          <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-50" onclick="toggleCart(false)"></div>
+            <div id="side-cart" class=" hidden fixed top-0 right-0 h-full w-[400px] bg-[#1D1F2E] z-50 shadow-xl transform translate-x-auto  transition-transform duration-300">
+              <div class="p-4 border-b border-b-gray-700 flex justify-between items-center">
+                <h2 class="text-base font-semibold text-gray-300">Your Cart</h2>
+                <div class="flex gap-2">
+                  <label for="AcceptConditions" class="relative block h-8 w-12 [-webkit-tap-highlight-color:_transparent]">
+                    <input type="checkbox" id="AcceptConditions" class="peer sr-only" onclick="toggleDarkAndLightMode()" />
+
+                    <span class="absolute inset-0 m-auto h-2 rounded-full bg-gray-300"></span>
+
+                    <span class="absolute inset-y-0 start-0 m-auto size-6 rounded-full bg-gray-500 transition-[inset-inline-start] peer-checked:start-6 peer-checked:*:scale-0">
+                      <span class="absolute inset-0 m-auto size-4 rounded-full bg-gray-200 transition-transform">
+                      </span>
+                    </span>
+                  </label>
+                  <button onclick="toggleCart(false)" class="text-gray-300 hover:text-white text-2xl leading-none">✕</button>
+                </div>
+
+              </div>
+              <div class="flex justify-center items-center h-screen">
+                <div class="flex items-center justify-center flex-col text-center text-white gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
+                  </svg>
+                  <p class=" text-lg">Your Cart is Empty</p>
+                  <p class="text-sm italic text-gray-400 px-2">It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful.</p>
+                </div>
+              </div>
+            </div>
+
           <div class="logo basis-2/6 text-center text-xl font-semibold cursor-pointer">CoffeeTailwind.</div>
           <ul id="mct-top-menu" class="basis-3/6 lg:basis-1/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-sm text-gray-500 font-medium">
             <li class="mct-top-menu-item "><a href="#">Home</a></li>
@@ -22,7 +53,7 @@
             <li class="mct-top-menu-item "><a href="#">StyleGuide</a></li>
             <li class="mct-top-menu-item "><a href="#">Linhs</a></li>
           </ul>
-          <ul class="cart basis-3/6 lg:basis-1/6 flex justify-end lg:justify-start items-center ml-16 uppercase text-sm text-gray-500 font-medium">
+          <ul class="cart basis-3/6 lg:basis-1/6 flex justify-end lg:justify-start items-center ml-16 uppercase text-sm text-gray-500 font-medium" onclick="toggleCart(true)">
             <li class="mct-top-menu-item">
               <a class="flex items-center" href="#">
               <svg xmlns="http://www.w3.org/2000/svg" class="mct-icon" viewBox="0 0 24 24">
